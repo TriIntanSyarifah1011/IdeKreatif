@@ -1,8 +1,8 @@
 <?php
 // Memasukkan header halaman
-include (".includes/header.php");
+include '.includes/header.php';
 // Menyertakan file untuk menampilkan notifikasi (jika ada)
-include (".includes/toast_notification.php");
+include '.includes/toast_notification.php';
 ?>
 
 <div class="container-xxl flex-grow-1 container-p-y">
