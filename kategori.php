@@ -24,8 +24,8 @@ include '.includes/toast_notification.php';
                     <th width="50px">#</th>
                     <th>Nama</th>
                     <th width="150px">Pilihan</th>
-</tr>
-</thead>
+                </tr>
+            </thead>
 <tbody class="table-border-bottom-0">
 <!-- Mengambil data kategori dari database -->
  <?php
@@ -57,7 +57,29 @@ include '.includes/toast_notification.php';
     </td>
     </tr>
     <!-- Modal untuk Hapus Data kategori-->
-
+     <div class="modal fade" id="deleteCategory_<?= $category['category_id']; ?>" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hapus Kategori?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
+ </div>
+ <div class="modal-body">
+    <form action="proses_kategori.php" method="POST">
+        <div>
+            <p>Tindakan ini tidak bisa dibatalkan.</p>
+            <input type="hidden" name="catID" value="<?= $category['category_id']; ?>">
+ </div>
+ <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary"
+    data-bs-dismiss="modal">Batal</button>
+    <button type="submit" name="delete" class="btn btn-primary">Hapus</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
     <!-- Modal untuk Update Data kategori-->
 
     <?php endwhile; ?>
@@ -68,3 +90,29 @@ include '.includes/toast_notification.php';
     </div>
     </div>
     <?php include '.includes/footer.php'; ?>
+
+ <!-- Modal untuk Tambah Data Kategori-->
+  <div class="modal fade" id="addCategory" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tambah Data</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
+ </div>
+ <div class="modal-body">
+    <form action="proses_kategori.php" method="POST">
+        <div>
+            <label for="namaKategori" class="form-label">Nama Kategori</label>
+ <!-- Input untuk nama kategori baru -->
+  <input type="text" class="form-control" name="category_name" required/>
+ </div>
+ <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" 
+    data-bs-dismiss="modal">Batal</button>
+    <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+ </div>
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
