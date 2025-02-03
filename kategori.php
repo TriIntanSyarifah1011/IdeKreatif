@@ -83,7 +83,7 @@ include '.includes/toast_notification.php';
     <!-- Modal untuk Update Data kategori-->
 <div id="editCategory_<?= $category['category_id']; ?>" class="modal fade" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="model-content">
+        <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">Update Data Kategori</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
