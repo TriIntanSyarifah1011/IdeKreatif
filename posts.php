@@ -34,7 +34,7 @@ include '.includes/header.php';
     while ($row = $result->fetch_assoc()){ // Iterasi setiap kategori
         echo "<option value='" .$roq["category_id"] ."'>"
     }
-}
+ }
 ?>
 </select>
 </div>
