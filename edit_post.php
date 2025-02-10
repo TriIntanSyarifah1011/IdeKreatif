@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
  <div class="row">
     <!-- form untuk mengedit postingan -->
      <div class="col-md-10">
-    <div class="card md-10">
+    <div class="card mb-4">
     <div class="card-body">
 <!-- Formulir menggunakan metode POST untuk mengirim data -->
  <form method="POST" action="proses_post.php" enctype="multipart/form-data">
@@ -48,7 +48,7 @@ if ($result->num_rows > 0) {
     <?php if (!empty($post['image_path'])): ?>
     <!-- Menampilkan gambar yang sudah diunggah -->
      <div class="mt-2">
-        <img src="<? $post['image_path']; ?>" alt="Current Image" class="img-thumbnail" style="max-width: 200px;">
+        <img src="<?= $post['image_path']; ?>" alt="Current Image" class="img-thumbnail" style="max-width: 200px;">
     </div>
     <?php endif; ?>
     </div>
@@ -68,7 +68,7 @@ if ($result->num_rows > 0) {
                 while ($row = $resultCategories->fetch_assoc()) {
                 // Menandai kategori yang sudah dipilih
                 $selected = ($row["category_id"] == $post['category_id']) ? "selected" : "";
-                echo "<option value='" .$row["category_id"] . "' $selected>" . $row["category_name"] . "</option>";
+                echo "<option value='" . $row["category_id"] . "' $selected>" . $row["category_name"] . "</option>";
             }
         }
         ?>

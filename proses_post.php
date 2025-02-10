@@ -12,11 +12,11 @@ $userID = $_SESSION["user_id"];
 if (isset($_POST['simpan'])) {
     // Mendapatkan data dari form
     $postTitle = $_POST["post_title"]; // Judul postingan
-    $content = &$_POST["content"]; // Konten postingan
+    $content = $_POST["content"]; // Konten postingan
     $categoryId = $_POST["category_id"]; // ID kategori
 
     // Mengatur direktori penyimpanan file gambar
-    $imageDir = "assets/img/uploads";
+    $imageDir = "assets/img/uploads/";
     $imageName = $_FILES["image"]["name"]; // Nama file gambar
     $imagePath = $imageDir . basename($imageName); // Path lengkap gambar
 
