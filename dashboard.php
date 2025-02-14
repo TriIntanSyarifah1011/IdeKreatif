@@ -57,12 +57,12 @@ while ($post = mysqli_fetch_assoc($exec)) :
 <!-- Menu dropdown -->
  <div class="dropdown-menu">
 <!-- Pilihan Edit -->
- <a hred="edit_post.php?post_id=<?= $post['id_post']; ?>" class="dropdown-item">
+ <a href="edit_post.php?post_id=<?= $post['id_post']; ?>" class="dropdown-item">
   <i class="bx bx-edit-alt me-2"></i> Edit
 </a>
 <!-- Pilihan Delete -->
  <a href="#" class="dropdown-item" data-bs-toggle="modal"
- data-bs-target="#deletePost_<? $post['id_post']; ?>">
+ data-bs-target="#deletePost_<?= $post['id_post']; ?>">
  <i class="bx bx-trash me-2"></i> Delete
 </a>
 </div>
@@ -70,7 +70,7 @@ while ($post = mysqli_fetch_assoc($exec)) :
 </td>
 </tr>
 <!-- Modal untuk Hapus konten Blog -->
- <div class="modal fade" id="deketePost_<?= $post['id_post']; ?>" tabinex="-1" aria-hidden="true">
+ <div class="modal fade" id="deletePost_<?= $post['id_post']; ?>" tabinex="-1" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
     <div class="modal-header">
@@ -78,7 +78,7 @@ while ($post = mysqli_fetch_assoc($exec)) :
       <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="modal-body">
-  <formm action="proses_post.php" method="POST">
+  <form action="proses_post.php" method="POST">
     <div>
       <p>Tindakan ini tidak bisa dibatalkan.</p>
       <input type="hidden" name="postID" value="<?= $post['id_post']; ?>">

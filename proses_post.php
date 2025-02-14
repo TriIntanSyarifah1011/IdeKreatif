@@ -6,7 +6,7 @@ include 'config.php';
 session_start();
 
 // Mendapatkan ID pengguna dari sesi
-$userID = $_SESSION["user_id"];
+$userId = $_SESSION["user_id"];
 
 // Menangani form untuk menambahkan postingan baru
 if (isset($_POST['simpan'])) {
@@ -84,9 +84,9 @@ if (isset($_POST['delete'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     // Mendapatkan data dari form
     $postId = $_POST['post_id'];
-    $postTitle = $_POST['post_title'];
-    $content = $_POST['content'];
-    $categoryId = $_POST['category_id'];
+    $postTitle = $_POST["post_title"];
+    $content = $_POST["content"];
+    $categoryId = $_POST["category_id"];
     $imageDir = "assets/img/uploads/"; // Direktori penyimpanan gambar
 
     // Periksa apakah file gambar baru diunggah
